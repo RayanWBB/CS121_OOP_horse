@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <random>
-#include <horse.h>
+#include "horse.h"
 
 Horse::Horse() { // initializes data members position, index, and trackLength
 	position = 0;
@@ -24,16 +24,16 @@ void Horse::advance() {
 	Horse::position = Horse::position + forward;
 } // end advance
 
-void Horse::printLane() {
+void Horse::printLane(int trackLength, int index) {
 	int pos = 0; // sentry variable
-	for(pos = 0; pos < Horse::trackLength; pos++) {
+	for(pos = 0; pos < trackLength; pos++) {
 		if(Horse::position == pos) {
-			std::cout << Horse::index;
+			std::cout << index;
 		} else {
 			std::cout << ".";
 		} // end if
 	} // end for
-	std::cout << "\n";
+	std::cout << std::endl;
 } // end printLane
 
 bool Horse::isWinner() {

@@ -2,12 +2,12 @@
 
 #include <iostream>
 #include <random>
-#include <race.h>
-#include <horse.h>
+#include "race.h"
+#include "horse.h"
 
 Race::Race() {
-	const int TRACK_LENGTH;
-	const static int NUM_HORSES;
+	const int TRACK_LENGTH = 15;
+	const static int NUM_HORSES = 5;
 
 	Horse horses[NUM_HORSES];
 	int horseSentry = 0; // sentry variable	
@@ -16,16 +16,21 @@ Race::Race() {
 	} // end for
 } // end constructor
 
-Race::start() {
+void Race::start() {
 	bool keepGoing = true;
 	int horseSentry = 0; // sentry variable	
-	while (keepGoing) {
+	Race::TRACK_LENGTH = 15;
+	Race::NUM_HORSES = 5;
+	while (keepGoing == true) {
 		for (horseSentry = 0; horseSentry < NUM_HORSES; horseSentry++) {
+		//	std::cout << horseSentry;
+		//	std::cout << std::endl;
 			horses[horseSentry].advance();
-			horses[horseSentry].printLane();
-			if (horses[horseSentry].isWinner == true) {
+			horses[horseSentry].printLane(TRACK_LENGTH, horseSentry);
+			if (horses[horseSentry].isWinner() == true) {
 				keepGoing = false;
 			} // end if
 		} // end for
+		keepGoing = false;
 	} // end while
 } // end race

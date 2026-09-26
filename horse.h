@@ -9,10 +9,10 @@ class Horse {
 		int trackLength;
 	public:
 		Horse();
-		init(int index, int trackLength);
-		advance();
-		printLane(int trackLength, int index);
-		isWinner() : bool;
+		void init(int index, int trackLength);
+		void advance();
+		void printLane(int trackLength, int index);
+		bool isWinner();
 };
 
 #endif
