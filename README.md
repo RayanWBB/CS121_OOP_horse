@@ -1,12 +1,14 @@
 # CS121_OOP_horse
-OOP horse race
+
+This function should make create a random, procedurally run horse race game. 
+It will compile the classes Race and Horse, as well as their header files and a main function into a Makefile.
 
 
 
 
 # UML
 
-```
+```mermaid
 classDiagram
 
 class Horse{
@@ -31,7 +33,7 @@ class Race{
 Race --> Horse
 ```
 
-## Race::Race()
+## Race::Race() 
 ```
 const int TRACK_LENGTH
 const static int NUM_HORSES
@@ -97,4 +99,16 @@ if position >= trackLength:
 	winning = true
 	print message declaring a horse has won
 return winning
+```
+
+# Main file
+```
+import iostream
+import race header
+import horse header
+
+begin main
+    construct the race with Race()
+    start the race
+end main
 ```
